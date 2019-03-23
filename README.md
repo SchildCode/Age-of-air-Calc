@@ -1,9 +1,17 @@
 # Age-of-air-Calc
 Advanced analysis of tracer gas measurements to calculate the efficiency of ventilation in rooms.
 
+### Installation and activation of Age-of-air-calc
+- Simply download the spreadsheet file and open it in Microsoft Excel. No installation or registration is needed.
+- However, this is a Visual Basic macro-enabled spreadhseet. You must activate macros for it to function: 
+  - When you open the file for the first time in Excel, you will see a yellow bar at the top of the window, with the message *"PROTECTED VIEW Be careful... [Enable Editing]"*. Click on the 'Enable Editing' button. 
+  - Next, depending on the security settings on your installation of Microsoft Excel, a red bar may appear at the top of the window, with the message *"BLOCKED CONTENT Macros in this document have been disabled..."*. This can be solved by moving the file to a directory on your PC that you designate for files that you trust, then open the file in Excel. To designate a 'trusted directory', click on **File > Options > Trust Center > Trust Center Settings > Trusted Locations > Add new location**, then browse to a directory, e.g. C:\TEMP\. Finally check that **Trust Center Settings > Trusted Documents > Disable Trusted Documents**  is not ticked.
+  - When macros are properly activated, **Age-of-air-CalcL** shows a small square splash-screen when you open the file. This splash screen shows the licence info, and advises you if an update is available for download from GitHub. Simply press 'Close' button to close the splash-screen. 
+  - If still no splash-screen appears, then you might be able to fix it by menu option **File > Options > Trust Center > Trust Center Settings > Macro Settings > Disable all macros with notification**, which is a suitable level of security.
+
 ### Output features
-- Calculates local air change index (e.g. in the breathing zone) and air change efficiency for the room as a whole, based on age-of-air concepts. These two incides are defined in a number of standards, e.g. Nordtest NT VVS 047 "Mean age of air".
-- Also calculates the ventilation rate (volumetric flow rate and air change rate) in the room based on the measured dosing rate and steady-state concentation of tracer gas in the room.
+- Calculates local air change index (e.g. in the breathing zone) and air change efficiency for the room as a whole, based on age-of-air concepts. These two incides are defined in a number of standards, e.g. Nordtest NT VVS 047 *"Mean age of air"*, ASHRAE Standard 129 *" Measuring Air Change Effectiveness"*.
+- Also calculates the ventilation rate (volumetric flow rate and air change rate) in the room based on two methods, (i) the measured time-constant of the change of concentration, and (ii) the measured dosing rate and steady-state concentation of tracer gas in the room. Both methods are defined in ISO 12569 *"Determination of specific airflow rate in buildings - Tracer gas dilution method"*, and ASTM E741 *"Standard Test Method for Determining Air Change in a Single Zone by Means of a Tracer Gas Dilution"*.
 
 ### Measurement/calculation capabilities
 - Both step-up and step-down experiments can be analyzed.
@@ -26,7 +34,7 @@ Advanced analysis of tracer gas measurements to calculate the efficiency of vent
 - If the room has other air inflow points (e.g. leakage), then the step-up method is not suitable for analysis. Analyse the step-down only. It is *not* recommended to operate a fan in the room to quickly achieve a fully uniform concentration before the step-down. This is because the fan will disturb the normal flow pattern in the room, especially if is is strongly influenced by bouyancy driven flow, so as not to disturb stratification, with and temperature stratification.
 - If the room has other air outflow points (e.g. leakage), then it is still OK to use both step-up and step-down methods. In either method, the room air change efficiency (εa) may be inaccurate, as there is no combined exhaust. One option is to measure the concentration of the combined flows in the duct system (However you should then subtract the time it takes for the air to flow from the exhaust grilles to the sampling point),
 
-### Instructions
+### Step-by-step instructions
 - **Step 1**: Open the gas monitor software 7620/7650. Open the database (either a Ventilation or Monitoring database, if it isn't already open). Use menu option Setup > Units to check that the tracer gas concentration is output in units mg/m³ and dosing rate to mg
 - **Step 2**: Use menu option File > Close to close the database. By the way, this does not exit the software. Then use menu option File > Export and choose to export all the measured channels plus setup info. This exports text files to your hard disk.
 - **Step 3**: Locate the exported text files. They will normally be saved in Program files > 7620 > dba or dbm > (name of database). The setup files are named "bkamalse.txt" for ventilation and "bkmmalse" for monitoring. Each channel has an output file "bkairm*.txt" for ventilation or "bkmonm*.txt" for monitoring.
@@ -34,7 +42,10 @@ Advanced analysis of tracer gas measurements to calculate the efficiency of vent
 - **Step 5**: To import the text files into this workbook, click on the "Import" button in the "Data" worksheet. Text file location was found in Step 2.
 - **Step 6**: To analyse the measurements, go to worksheet "Analyze". You should adjust the values in blue text in the column entitled "Analysis settings", in order to fine-tune the analysis.
 
-### Lisencing
+### License & warranty
+- Distributed free under the "CC BY-SA 4.0" lisence (https://creativecommons.org/licenses/by-sa/4.0/). BY-SA is Attribute-ShareAlike* but does not require source-code disclosure.
+- * Please acknowledge/attribute use of this software in your report/publication with an appropriate author citation and URL to this site.
+- Provided without warranty of any kind.
 
 ### Authour and copyright owner
 Peter.Schild@OsloMet.no
