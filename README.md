@@ -10,7 +10,7 @@ Advanced analysis of tracer gas measurements to calculate the efficiency of vent
   - If still no splash-screen appears, then you might be able to fix it by menu option **File > Options > Trust Center > Trust Center Settings > Macro Settings > Disable all macros with notification**, which is a suitable level of security.
 
 ### Output features
-- Calculates local air change index (e.g. in the breathing zone) and air change efficiency for the room as a whole, based on age-of-air concepts. These two incides are defined in a number of standards, e.g. Nordtest NT VVS 047 *"Mean age of air"*, and ASHRAE Standard 129 *" Measuring Air Change Effectiveness"*.
+- Calculates local air change index (e.g. in the breathing zone), and air change efficiency for the room as a whole, based on age-of-air concepts. These two incides are defined in a number of standards, e.g. Nordtest NT VVS 047 *"Mean age of air"*, and ASHRAE Standard 129 *" Measuring Air Change Effectiveness"*. A good introductory guide to these concepts is the AIVC Guide *"A Guide to Energy-Efficient Ventilation"* (www.aivc.org).
 - Also calculates the ventilation rate (volumetric flow rate and air change rate) in the room based on two methods, (i) the measured time-constant of the change of concentration, and (ii) the measured dosing rate and steady-state concentation of tracer gas in the room. Both methods are defined in ISO 12569 *"Determination of specific airflow rate in buildings - Tracer gas dilution method"*, and ASTM E741 *"Standard Test Method for Determining Air Change in a Single Zone by Means of a Tracer Gas Dilution"*.
 
 ### Measurement/calculation capabilities
