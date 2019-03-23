@@ -2,7 +2,7 @@
 Advanced analysis of tracer gas measurements to calculate the efficiency of ventilation in rooms.
 
 ### Features
-- Calculates
+- Calculates both local air change index (e.g. in the breathing zone) and air change efficiency for the room as a whole, based on age-of-air concepts. These incides are defined in a number of standards, e.g. Nordtest NT VVS 047 "Mean age of air"
 - It can import measurements taken by Brüel & Kjær / Innova / Lumasense (www.lumasenseinc.com) multigas monitor 1314/1412/1512 with Multipoint Doser and Sampler 1303/1403, but you can also paste in data from other sources
 - Up to 6 sampling points are presently supported. (This could be extended to 12 or more if GitHub users pull-request).
 - It can be used with any useful tracer gas, e.g. SF6 (The gas filter number can be changed in 'Global settings' on sheet 'Instructions')
