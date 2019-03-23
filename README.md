@@ -1,24 +1,30 @@
 # Age-of-air-Calc
 Advanced analysis of tracer gas measurements to calculate the efficiency of ventilation in rooms.
 
-### Features
-- Calculates both local air change index (e.g. in the breathing zone) and air change efficiency for the room as a whole, based on age-of-air concepts. These incides are defined in a number of standards, e.g. Nordtest NT VVS 047 "Mean age of air"
-- It can import measurements taken by Brüel & Kjær / Innova / Lumasense (www.lumasenseinc.com) multigas monitor 1314/1412/1512 with Multipoint Doser and Sampler 1303/1403, but you can also paste in data from other sources
-- Up to 6 sampling points are presently supported. (This could be extended to 12 or more if GitHub users pull-request).
+### Output features
+- Calculates local air change index (e.g. in the breathing zone) and air change efficiency for the room as a whole, based on age-of-air concepts. These two incides are defined in a number of standards, e.g. Nordtest NT VVS 047 "Mean age of air".
+- Also calculates the ventilation rate (volumetric flow rate and air change rate) in the room based on the measured dosing rate and steady-state concentation of tracer gas in the room.
+
+### Measurement/calculation capabilities
+- Both step-up and step-down experiments can be analyzed.
+- It can import measurements taken by Brüel & Kjær / Innova / Lumasense (www.lumasenseinc.com) Multigas Monitor 1314/1412/1512 with Multipoint Doser and Sampler 1303/1403. Alternatively, you can also paste in data from other sources.
+- Up to 6 sampling points are presently supported. (This could be extended to 12 or more if GitHub users pull-request). You designate one of these points as a background concentration, and another as the exhaust duct concentration. The remaining sampling points can for example be located thoughout the breathing zone.
+- The software automatically corrects for background concentration of tracer gas (e.g. outdoor concentration, or recirculation in the duct system). This uses a more advanced/accurate advanced in existing standards and textbooks, accounting for the fact that the background concentration can be changing over time with a phase lag between supply and exhaust.
 - It can be used with any useful tracer gas, e.g. SF6 (The gas filter number can be changed in 'Global settings' on sheet 'Instructions')
-- The software automatically corrects for background concentrations, which can change over time.
-- 
 
 ### Experimental setup
-- It is recommended to sample using at least two channels (one in the supply duct before dosing point, and one in the extract duct), and optional additional sampling points located in the breathing zone.
-- If the room has multiple air terminal devices, then both the background (ambient) sampling, and dosing should be located in the combined flow in the main duct, before it splits to the different air terminal devices in the room.
+- It is recommended to use at least two sampling pointss (one in the supply duct before dosing point, and one in the extract duct). Optional additional sampling points may be located in the breathing zone.
+- It is recommended to have as rapid logging as possible. This is achieved by limiting the number of sampling points (2 or 3), and using maximum two gas filters (e.g. SF6 and water vapour for cross-contamination correction).
+- If the room has multiple air terminal devices, then both the background (ambient) sampling, and dosing should be located in the combined flow in the main duct, before it splits to the different air terminal devices in the room. It is very important that the dosing gas gets properly mixed upstream of the air terminal devices to the room, so that the air supplied to the room has a uniform concentration. One means of achieving this is to dose the gas via a flow cross (an averaging pitot station with multiple holes) in the duct.
 - The the background (ambient) concentration should be measured upstream of the dosing point, so that it does not measure the dosed gas.
 - If the room has multiple exhaust terminals, the extract concentration should be measured in the combined flow in the main extract duct, where the flows from the different extract terminals has joined.
+- The ventilation rate should be approximately constant thoughout the measurement period. This is a fundamental assumption for the step-up and step-down methods.
+- Use the correct dosing rate of tracer gas so that the concentration lies within the optimal linear region of calibration of the Multigas Monitor. Too high concentration of tracer gas may lead to separation effects (due to difference in density of air and tracer gas).
 
-### Experimantal method
-- It is sensible to run a step-up immediately followed by a step-down measurement. In this way, the tracer gas is used for two useful measurements instead of just one, at no additional cost.
-- If the room has other air inflow points (e.g. leakage), then the step-up method is not recommented. Use the step-down method after having mixed the room air with a fan. (If bouyancy driven flow, use fan sparingly, so as not to disturb stratification)
-- If the room has other air outflow points (e.g. leakage), then it is still OK to use both step-up and step-down methods. In either method, the room air change efficiency (εa) may be inaccurate, as there is no combined exhaust.
+### Experiment tips
+- It is sensible to run a step-up immediately followed by a step-down measurement. In this way, the tracer gas is used for two useful measurements instead of just one, at no additional cost. My experience is that the step-down measurement is often more accurate than the step up, especially in cases when it was difficult to achieve perfectly uniform concentration in the supply air during the step-up.
+- If the room has other air inflow points (e.g. leakage), then the step-up method is not suitable for analysis. Analyse the step-down only. It is *not* recommended to operate a fan in the room to quickly achieve a fully uniform concentration before the step-down. This is because the fan will disturb the normal flow pattern in the room, especially if is is strongly influenced by bouyancy driven flow, so as not to disturb stratification, with and temperature stratification.
+- If the room has other air outflow points (e.g. leakage), then it is still OK to use both step-up and step-down methods. In either method, the room air change efficiency (εa) may be inaccurate, as there is no combined exhaust. One option is to measure the concentration of the combined flows in the duct system (However you should then subtract the time it takes for the air to flow from the exhaust grilles to the sampling point),
 
 ### Instructions
 - **Step 1**: Open the gas monitor software 7620/7650. Open the database (either a Ventilation or Monitoring database, if it isn't already open). Use menu option Setup > Units to check that the tracer gas concentration is output in units mg/m³ and dosing rate to mg
@@ -27,3 +33,8 @@ Advanced analysis of tracer gas measurements to calculate the efficiency of vent
 - **Step 4**: Open this Excel workbook. Make sure that macros are activated. A message box should appear when you open the file, showing that the macro is activated.
 - **Step 5**: To import the text files into this workbook, click on the "Import" button in the "Data" worksheet. Text file location was found in Step 2.
 - **Step 6**: To analyse the measurements, go to worksheet "Analyze". You should adjust the values in blue text in the column entitled "Analysis settings", in order to fine-tune the analysis.
+
+### Lisencing
+
+### Authour and copyright owner
+Peter.Schild@OsloMet.no
