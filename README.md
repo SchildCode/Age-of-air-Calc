@@ -43,8 +43,8 @@ Advanced analysis of tracer gas measurements to calculate the efficiency of vent
 - **Step 6**: To analyse the measurements, go to worksheet "Analyze". You should adjust the values in blue text in the column entitled "Analysis settings", in order to fine-tune the analysis.
 
 ### License & warranty
-- Distributed free under the "CC BY-SA 4.0" lisence (https://creativecommons.org/licenses/by-sa/4.0/). BY-SA is Attribute-ShareAlike* but does not require source-code disclosure.
-- * Please acknowledge/attribute use of this software in your report/publication with an appropriate author citation and URL to this site.
+- Distributed free under the "CC BY-SA 4.0" lisence (https://creativecommons.org/licenses/by-sa/4.0/). BY-SA is Attribute-ShareAlike but does not require source-code disclosure.
+- Please acknowledge/attribute use of this software in your report/publication with an appropriate author citation and URL to this site.
 - Provided without warranty of any kind.
 
 ### Authour and copyright owner
